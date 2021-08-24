@@ -81,6 +81,7 @@ CREATE TABLE acompanha(
 CREATE TABLE gerencia(
     gerente VARCHAR (11),
     gerenciado VARCHAR(11),
+    CONSTRAINT pk_gerencia PRIMARY KEY (gerenciado),
     CONSTRAINT fk_gerente FOREIGN KEY (gerente) REFERENCES funcionario(cpf),
     CONSTRAINT fk_gerenciado FOREIGN KEY (gerenciado) REFERENCES funcionario(cpf)
 );
