@@ -11,6 +11,7 @@ CREATE TABLE contato(
     cpf VARCHAR(11),
     telefone VARCHAR(14),
     email VARCHAR(40),
+    CONSTRAINT key_contato PRIMARY KEY (cpf),
     CONSTRAINT fk_contato FOREIGN KEY (cpf) REFERENCES pessoa(cpf)
 );
 
