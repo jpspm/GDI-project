@@ -74,6 +74,7 @@ CREATE TABLE avalia(
 CREATE TABLE acompanha(
     acompanhante VARCHAR(11),
     acompanhado VARCHAR(11),
+    CONSTRAINT pk_acompanha PRIMARY KEY (acompanha, acompanhado),
     CONSTRAINT fk_acompanhante FOREIGN KEY(acompanhante) REFERENCES funcionario(cpf),
     CONSTRAINT fk_acompanhado FOREIGN KEY (acompanhado) REFERENCES cliente(cpf)
 );
