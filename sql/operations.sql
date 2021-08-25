@@ -1,11 +1,11 @@
 --seleciona por cidade, as academias que tem mais de um cliente matriculado
 --GROUP BY / HAVING
 
-SELECT P.end_cidade, ACAD.nome, COUNT(*) AS Quantidade
-FROM matricula M, pessoa P, unidade ACAD
-WHERE M.cpf = P.cpf
-GROUP BY P.end_cidade, ACAD.nome
-HAVING COUNT(*) > 0;
+SELECT ACAD.end_cidade, ACAD.nome, COUNT(*) AS Quantidade
+FROM matricula M, unidade ACAD
+WHERE M.id_unidade = ACAD.id_unidade
+GROUP BY ACAD.end_cidade, ACAD.nome
+HAVING COUNT(*) > 1;
 
 --Seleciona o nome e a função de cada funcionario
 --INNER JOIN
