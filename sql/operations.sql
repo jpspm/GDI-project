@@ -20,9 +20,9 @@ LEFT OUTER JOIN contato C on P.cpf = C.cpf;
 
 --selecionar os nomes e cpfs dos clientes que tem frequencia maior que 5
 --SEMI-JUNÇÂO
-SELECT M.cpf, P.nome
-FROM matricula M, pessoa P
-WHERE EXISTS (SELECT * FROM cliente C WHERE M.cpf = C.cpf AND P.cpf = M.cpf AND C.frequencia > 5);
+SELECT p.cpf, P.nome
+FROM pessoa P
+WHERE EXISTS (SELECT * FROM cliente C WHERE p.cpf = C.cpf AND C.frequencia > 5);
 
 --selecionar os nomes e cpf das pessoas que tem telefone cadastrado
 --anti-junção
